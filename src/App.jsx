@@ -1,3 +1,18 @@
-export default function App() {
-  return <h1 className="text-3xl font-bold underline bg-blue-500">React exercises</h1>;
-}
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Home";
+import Captures from "./pages/Captures";
+
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/stateprops" element={<Captures />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
+export default App;
+
+
