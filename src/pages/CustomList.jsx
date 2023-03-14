@@ -1,5 +1,3 @@
-import React from "react";
-
 import Animal from "../Components/Animal";
 
 const CustomList = () => {
