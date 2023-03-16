@@ -13,11 +13,6 @@ export default function Editor({ currentNote, updateNote }) {
         tasklists: true,
     })
 
-    const generateMarkdownPreview = async (markdown) => {
-        const html = await converter.makeHtml(markdown)
-        return html
-    }
-
     return (
         <section className="pane editor">
             <ReactMde
@@ -25,7 +20,9 @@ export default function Editor({ currentNote, updateNote }) {
                 onChange={updateNote}
                 selectedTab={selectedTab}
                 onTabChange={setSelectedTab}
-                generateMarkdownPreview={generateMarkdownPreview}
+                generateMarkdownPreview={(markdown) =>
+                    Promise.resolve(converter.makeHtml(markdown))
+                }
                 minEditorHeight={80}
                 heightUnits="vh"
             />
