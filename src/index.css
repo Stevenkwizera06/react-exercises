@@ -1,3 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+/* Styles for the main container */
+.bg-primary-100 {
+       background-color: #2d3748;
+     }
+     
+     .bg-secondary-100 {
+       background-color: #e2e8f0;
+     }
+     
+     .w-85 {
+       width: 21.25rem;
+     }
+     
+     /* Styles for the game title */
+     .text-dark-100 {
+       color: #edf2f7;
+       font-family: 'Helvetica Neue', sans-serif;
+       font-size: 2.5rem;
+       line-height: 3rem;
+     }
+     
+     /* Styles for the game instructions */
+     .text-dark-200 {
+       color: #a0aec0;
+       font-family: 'Helvetica Neue', sans-serif;
+       font-size: 1rem;
+       line-height: 1.5rem;
+     }
+     
+     /* Styles for the dice container */
+     .flex-wrap {
+       flex-wrap: wrap;
+     }
+     
+     .gap-3 {
+       gap: 0.75rem;
+     }
+     
+     /* Styles for the roll button */
+     .bg-blue-400 {
+       background-color: #2b6cb0;
+     }
+     
+     .py-2 {
+       padding-top: 0.5rem;
+       padding-bottom: 0.5rem;
+     }
+     
+     .px-7 {
+       padding-left: 1.75rem;
+       padding-right: 1.75rem;
+     }
+     
+     .text-white {
+       color: #edf2f7;
+     }
+     
+     .font-bold {
+       font-weight: 700;
+     }
+     
+     /* Styles for the dice */
+     .py-3 {
+       padding-top: 0.75rem;
+       padding-bottom: 0.75rem;
+     }
+     
+     .px-5 {
+       padding-left: 1.25rem;
+       padding-right: 1.25rem;
+     }
+     
+     .rounded-md {
+       border-radius: 0.375rem;
+     }
+     
+     .cursor-pointer {
+       cursor: pointer;
+     }
+     
+     .font-bold {
+       font-weight: 700;
+     }
+     
+     /* Styles for held dice */
+     .bg-blue-500 {
+       background-color: #2b6cb0;
+     }
+     
+     .text-white {
+       color: #edf2f7;
+     }
+     
+     /* Styles for not held dice */
+     .bg-white {
+       background-color: #fff;
+     }
+     
+     /* Confetti styles */
+     .react-confetti__canvas {
+       position: fixed;
+       pointer-events: none;
+       top: 0;
+       left: 0;
+     }
+     
