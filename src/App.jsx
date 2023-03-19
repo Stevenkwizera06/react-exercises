@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Dice from "./Components/Dice";
 import { nanoid } from "nanoid";
 import Confetti from "react-confetti";
