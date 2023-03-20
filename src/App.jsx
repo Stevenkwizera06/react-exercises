@@ -4,10 +4,7 @@ import { nanoid } from "nanoid";
 import Confetti from "react-confetti";
 
 const App = () => {
-  const [dice, setDice] = useState(generateNewDice);
-  const [tenzies, setTenzies] = useState(false);
-
-  function generateNewDice() {
+  const generateNewDice = () => {
     const newDice = [];
     for (let i = 0; i < 10; i++) {
       newDice.push({
@@ -17,7 +14,10 @@ const App = () => {
       });
     }
     return newDice;
-  }
+  };
+
+  const [dice, setDice] = useState(generateNewDice());
+  const [tenzies, setTenzies] = useState(false);
 
   const rollNewDice = () => {
     if (!tenzies) {
@@ -33,7 +33,7 @@ const App = () => {
         })
       );
     } else {
-      setDice(generateNewDice);
+      setDice(generateNewDice());
       setTenzies(false);
     }
   };
