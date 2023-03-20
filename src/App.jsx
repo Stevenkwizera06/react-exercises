@@ -22,7 +22,7 @@ const App = () => {
   const rollNewDice = () => {
     if (!tenzies) {
       setDice(
-        dice.map((die) => {
+        dice.map(die => {
           return die.isHeld
             ? die
             : {
@@ -38,9 +38,11 @@ const App = () => {
     }
   };
 
+  
+
   const handleHold = (id) => {
     setDice(
-      dice.map((die) => {
+      dice.map(die => {
         return die.id === id ? { ...die, isHeld: !die.isHeld } : die;
       })
     );
@@ -55,7 +57,7 @@ const App = () => {
     }
   }, [dice]);
 
-  const diceElement = dice.map((die) => (
+  const diceElement = dice.map(die => (
     <Dice
       isHeld={die.isHeld}
       value={die.value}
