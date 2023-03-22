@@ -13,15 +13,15 @@ const generateShuffledAnswers = (incorrectAnswers, correctAnswer) => {
   return shuffledAnswers;
 };
 
-export default function Game() {
-  const [quizQuestions, setQuizQuestions] = useState([]);
-  const [questionsData, setQuestionsData] = useState([]);
-  const [score, setScore] = useState(false);
-  const [isFetching, setIsFetching] = useState(false);
-  const [isGameWon, setIsGameWon] = useState(false);
-  const [canRevealAnswers, setCanRevealAnswers] = useState(false);
-  const [areAnswersRevealed, setAreAnswersRevealed] = useState(false);
-
+  const Game = () => {
+    const [quizQuestions, setQuizQuestions] = useState([]);
+    const [questionsData, setQuestionsData] = useState([]);
+    const [score, setScore] = useState(false);
+    const [isFetching, setIsFetching] = useState(false);
+    const [isGameWon, setIsGameWon] = useState(false);
+    const [canRevealAnswers, setCanRevealAnswers] = useState(false);
+    const [areAnswersRevealed, setAreAnswersRevealed] = useState(false);
+  
   const fetchQuestions = async () => {
     setIsFetching(true);
     try {
@@ -29,7 +29,7 @@ export default function Game() {
       const responseData = await response.json();
       return responseData.results;
     } catch (error) {
-      console.error(error);
+     
     } finally {
       setIsFetching(false);
     }
@@ -164,3 +164,4 @@ export default function Game() {
     </section>
   );
 } 
+export default  Game
