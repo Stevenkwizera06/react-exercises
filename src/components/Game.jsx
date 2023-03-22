@@ -10,7 +10,7 @@ const generateShuffledAnswers = (incorrectAnswers, correctAnswer) => {
   const randomIndex = Math.floor(Math.random() * (incorrectAnswers.length + 1));
   const shuffledAnswers = [...incorrectAnswers];
   shuffledAnswers.splice(randomIndex, 0, correctAnswer);
-  return shuffledAnswers; 
+  return shuffledAnswers;
 };
 
 export default function Game() {
@@ -163,4 +163,4 @@ export default function Game() {
       )}
     </section>
   );
-}
+} 
