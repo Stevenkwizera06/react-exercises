@@ -15,8 +15,8 @@ const App = () => {
   };
 
   return (
-    <div className='p-32 space-y-5 w-full bg-gray-50 m-12'>
-      <form className='flex flex-col w-48- gap-2 '>
+    <div className='p-32 space-y-5 w-1/2 bg-gray-50 m-12 mx-auto container'>
+      <form className='flex flex-col gap-2 '>
         <input
           type='text'
           name='firstName'
