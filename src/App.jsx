@@ -11,7 +11,7 @@ const App = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`Hello ${firstName} ${lastName}`);
+    alert(`Hello ${firstName.trim() || 'John'} ${lastName.trim() || 'Doe'}`);
   };
 
   return (
