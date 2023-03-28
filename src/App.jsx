@@ -4,6 +4,7 @@ import CardComponent from "./components/CardComponent";
 const App = () => {
   const [count, setCount] = useState(0);
   const [usersData, setUsersData] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function getData() {
@@ -12,15 +13,15 @@ const App = () => {
           "https://random-data-api.com/api/users/random_user?size=10"
         );
         const data = await res.json();
-        const newArray = Array.from(data, ({ avatar: image, first_name: fname, last_name: lname, employment }) => ({
+        const newArray = Array.from(data, ({ avatar: image, first_name: firstName, last_name: lastName, employment }) => ({
           image,
-          fname,
-          lname,
+          firstName,
+          lastName,
           employment,
         }));
         setUsersData(newArray);
       } catch (error) {
-        console.error(error);
+        setError(error.message);
       }
     }
     getData();
@@ -28,20 +29,20 @@ const App = () => {
 
   const handleClick = () => setCount((prevCount) => prevCount + 1);
 
-  const genLinks = () => {
-    let arr = [];
-    for (let i = 0; i < 10; i++) {
-      arr.push({ text: `Exercise ${i}`, link: `/exercise${i}` });
+  const generateLinks = () => {
+    let exerciseArray = [];
+    for (let exerciseIndex = 0; exerciseIndex < 10; exerciseIndex++) {
+      exerciseArray.push({ text: `Exercise ${exerciseIndex}`, link: `/exercise${exerciseIndex}` });
     }
-    return arr;
+    return exerciseArray;
   };
 
-  const array = genLinks();
+  const linksArray = generateLinks();
 
   return (
     <div className="h-screen flex flex-col items-center ">
       <div>
-        {array.map((item, index) => (
+        {linksArray.map((item, index) => (
           <a
             key={index}
             href={item.link}
@@ -63,6 +64,7 @@ const App = () => {
           <CardComponent key={id} {...rest} />
         ))}
       </div>
+      {error && <p>There was an error: {error}</p>}
     </div>
   );
 };
