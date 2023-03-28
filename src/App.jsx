@@ -2,15 +2,15 @@ import CardComponent  from "./components/CardComponent ";
 import data from "./data";
 
 const App = () => {
-  const genLinks = () => {
-    let arr = [];
+  const generateLinks  = () => {
+    let Links = [];
     for (let i = 0; i < 10; i++) {
-      arr.push({ text: `Exercise ${i}`, link: `/exercise${i}` });
+      Links.push({ text: `Exercise ${i}`, link: `/exercise${i}` });
     }
-    return arr;
+    return Links;
   };
 
-  const array = genLinks();
+  const array = generateLinks ();
   return (
     <div className="h-screen flex flex-col items-center ">
       <div>
